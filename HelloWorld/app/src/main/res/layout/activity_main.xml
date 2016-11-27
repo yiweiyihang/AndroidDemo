@@ -1,0 +1,56 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yiweiyihangft.helloworld.MainActivity">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/memeda"/>
+    <TextView
+        android:id ="@+id/from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:textSize="28sp"
+        android:fontFamily="monospace"
+        android:text="To FT"
+        android:padding="20sp"
+        android:textColor="@android:color/holo_orange_light"/>
+    <TextView
+        android:id="@+id/words"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/from"
+        android:text=" HELLO WORLD!!~"
+        android:textSize="36sp"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/colorAccent"
+        android:paddingTop="40dp"
+        android:layout_margin="20dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/words"
+        android:text="  (づ￣ 3￣)づ~"
+        android:textSize="36sp"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        android:layout_margin="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From FengTao"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="28sp"
+        android:padding="16sp"/>
+</RelativeLayout>
