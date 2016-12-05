@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -55,6 +56,15 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         TextView mEngView = (TextView)listItemView.findViewById(R.id.eng_text_view);
         mEngView.setText(currentWord.getEngTran());
+        ImageView mImageView = (ImageView)listItemView.findViewById(R.id.word_image_view);
+        if(currentWord.hasImage()){
+            //Set the imageView Resource
+            mImageView.setImageResource(currentWord.getmImageViewId());
+            mImageView.setVisibility(View.VISIBLE);
+        } else{
+            // Otherwise hide imageView
+            mImageView.setVisibility(View.GONE);
+        }
 
         return listItemView;
 

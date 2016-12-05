@@ -8,10 +8,18 @@ package com.example.android.miwok;
 public class Word {
     private String mMiwokTran;
     private String mEngTran;
+    private int mImageViewId = NO_IMAGE_PROVIDED;
 
+    private static final int NO_IMAGE_PROVIDED = -1;
     // 构造函数
-    public Word(String miwok,String eng){
+    public Word(String miwok,String eng,int imageId){
         mMiwokTran = miwok;
+        mEngTran = eng;
+        mImageViewId = imageId;
+    }
+    // 构造函数重载  处理phrases不需要添加图片的情况
+    public Word(String miwork,String eng){
+        mMiwokTran = miwork;
         mEngTran = eng;
     }
 
@@ -23,6 +31,18 @@ public class Word {
     // Get the English Translation of the Word
     public String getEngTran(){
         return mEngTran;
+    }
+
+    // Get the ImageView ID of the Word
+    public int getmImageViewId(){return mImageViewId;}
+
+    // Check if the Word has Image
+    public boolean hasImage(){
+//        if(mImageViewId != NO_IMAGE_PROVIDED){
+//            return true;
+//        }
+//        return false;
+        return mImageViewId != NO_IMAGE_PROVIDED;
     }
 
 }
