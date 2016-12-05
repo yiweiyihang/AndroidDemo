@@ -2,8 +2,7 @@ package com.example.android.miwok;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -12,24 +11,25 @@ public class NumbersActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_numbers);
+        setContentView(R.layout.word_list);
 
-        ArrayList<String>  words = new ArrayList<>();
-        words.add(0,"one");
-        words.add(1,"two");
-        words.add(2,"three");
-        words.add(3,"four");
-        words.add(4,"five");
-        words.add(5,"six");
-        words.add(6,"seven");
-        words.add(7,"eight");
-        words.add(8,"nine");
-        words.add(9,"ten");
-        LinearLayout numView = (LinearLayout)findViewById(R.id.activity_numbers);
-        for(int index = 0;index < words.size();index ++){
-            TextView numWordView = new TextView(this);
-            numWordView.setText(words.get(index));
-            numView.addView(numWordView);
-        }
+        ArrayList<Word>  words = new ArrayList<>();
+        // example to add words to ArrayList
+        Word w = new Word("lutti","one");
+        words.add(w);
+        //简化语句
+        words.add(new Word("ottiiko","two"));
+        words.add(new Word("tolookosu","three"));
+        words.add(new Word("oyyisa","four"));
+        words.add(new Word("masokka","five"));
+        words.add(new Word("temmokka","six"));
+        words.add(new Word("kenekaku","seven"));
+        words.add(new Word("kawinta","eight"));
+        words.add(new Word("wo'e","nine"));
+        words.add(new Word("na'aacha","ten"));
+
+        WordAdapter itemsAdapter = new WordAdapter(this,words);
+        ListView listView = (ListView)findViewById(R.id.list);
+        listView.setAdapter(itemsAdapter);
     }
 }
