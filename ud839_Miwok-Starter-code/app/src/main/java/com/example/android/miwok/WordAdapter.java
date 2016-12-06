@@ -15,6 +15,7 @@ import java.util.ArrayList;
  */
 
 public class WordAdapter extends ArrayAdapter<Word> {
+    private int mcolorsId;
     /**
      * This is our own custom constructor (it doesn't mirror a superclass constructor).
      * The context is used to inflate the layout file, and the list is the data we want
@@ -23,12 +24,13 @@ public class WordAdapter extends ArrayAdapter<Word> {
      * @param context        The current context. Used to inflate the layout file.
      * @param words A List of Word objects to display in a list
      */
-    public WordAdapter(Activity context, ArrayList<Word> words) {
+    public WordAdapter(Activity context, ArrayList<Word> words , int colorsId) {
         // Here, we initialize the ArrayAdapter's internal storage for the context and the list.
         // the second argument is used when the ArrayAdapter is populating a single TextView.
         // Because this is a custom adapter for two TextViews and an ImageView, the adapter is not
         // going to use this second argument, so it can be any value. Here, we used 0.
         super(context, 0, words);
+        mcolorsId = colorsId;
     }
 
 
@@ -65,6 +67,8 @@ public class WordAdapter extends ArrayAdapter<Word> {
             // Otherwise hide imageView
             mImageView.setVisibility(View.GONE);
         }
+        mMiwokView.setBackgroundResource(mcolorsId);
+        mEngView.setBackgroundResource(mcolorsId);
 
         return listItemView;
 

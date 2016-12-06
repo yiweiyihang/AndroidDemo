@@ -2,9 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools = "http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:textSize="30sp"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:minHeight="@dimen/list_item_height">
     <ImageView
         android:id="@+id/word_image_view"
         android:layout_width="wrap_content"
@@ -14,20 +15,28 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
         <TextView
             android:id="@+id/miwok_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:paddingLeft="16dp"
             android:paddingTop="16dp"
+            android:gravity="bottom"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
             tools:text = "lutti"/>
         <TextView
             android:id="@+id/eng_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="top"
             android:paddingLeft="16dp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
             tools:text="one"/>
     </LinearLayout>
 
