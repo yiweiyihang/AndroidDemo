@@ -1,33 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools = "http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:textSize="30sp"
+    android:minHeight="@dimen/list_item_height"
     android:orientation="horizontal"
-    android:minHeight="@dimen/list_item_height">
+    android:textSize="30sp">
+
     <ImageView
         android:id="@+id/word_image_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:src="@mipmap/ic_launcher"
-        android:layout_marginRight="16dp"/>
+        android:layout_marginRight="16dp"
+        tools:src="@mipmap/ic_launcher" />
+
     <LinearLayout
+        android:id="@+id/touch_view"
         android:layout_width="0dp"
-        android:layout_weight="1"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/miwok_text_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:gravity="bottom"
             android:paddingLeft="16dp"
             android:paddingTop="16dp"
-            android:gravity="bottom"
             android:textColor="@android:color/white"
             android:textStyle="bold"
-            tools:text = "lutti"/>
+            tools:text="lutti" />
+
         <TextView
             android:id="@+id/eng_text_view"
             android:layout_width="match_parent"
@@ -37,7 +42,7 @@
             android:paddingLeft="16dp"
             android:textColor="@android:color/white"
             android:textStyle="bold"
-            tools:text="one"/>
+            tools:text="one" />
     </LinearLayout>
 
 

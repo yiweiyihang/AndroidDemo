@@ -9,18 +9,21 @@ public class Word {
     private String mMiwokTran;
     private String mEngTran;
     private int mImageViewId = NO_IMAGE_PROVIDED;
+    private int mMediaId;
 
     private static final int NO_IMAGE_PROVIDED = -1;
     // 构造函数
-    public Word(String miwok,String eng,int imageId){
+    public Word(String miwok,String eng,int imageId,int mediaId){
         mMiwokTran = miwok;
         mEngTran = eng;
         mImageViewId = imageId;
+        mMediaId = mediaId;
     }
     // 构造函数重载  处理phrases不需要添加图片的情况
-    public Word(String miwork,String eng){
+    public Word(String miwork,String eng,int mediaId){
         mMiwokTran = miwork;
         mEngTran = eng;
+        mMediaId = mediaId;
     }
 
     // Get the Miwok Translation of the Word.
@@ -44,5 +47,6 @@ public class Word {
 //        return false;
         return mImageViewId != NO_IMAGE_PROVIDED;
     }
+    public int getmMediaId(){return mMediaId;}
 
 }
