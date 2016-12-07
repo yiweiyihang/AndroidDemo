@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class ColorsActivity extends AppCompatActivity {
 
+    private MediaPlay mediaPlay;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +29,12 @@ public class ColorsActivity extends AppCompatActivity {
         WordAdapter itemsAdapter = new WordAdapter(this,words,R.color.category_colors);
         ListView listView = (ListView)findViewById(R.id.list);
         listView.setAdapter(itemsAdapter);
-        MediaPlay mediaPlay = new MediaPlay(listView,getBaseContext());
+        mediaPlay = new MediaPlay(listView,getBaseContext());
         mediaPlay.mediaPlay();
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mediaPlay.releaseMediaPlayer();
     }
 }

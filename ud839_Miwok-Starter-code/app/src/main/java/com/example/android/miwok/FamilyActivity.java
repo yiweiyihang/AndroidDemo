@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class FamilyActivity extends AppCompatActivity {
 
+    private MediaPlay mediaPlay;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +32,12 @@ public class FamilyActivity extends AppCompatActivity {
         ListView listView = (ListView)findViewById(R.id.list);
         listView.setAdapter(itemsAdapter);
 
-        MediaPlay mediaPlay = new MediaPlay(listView,getBaseContext());
+        mediaPlay = new MediaPlay(listView,getBaseContext());
         mediaPlay.mediaPlay();
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mediaPlay.releaseMediaPlayer();
     }
 }
