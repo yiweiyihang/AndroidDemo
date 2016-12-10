@@ -33,8 +33,6 @@ public class WordAdapter extends ArrayAdapter<Word> {
         super(context, 0, words);
         mcolorsId = colorsId;
     }
-
-
     /**
      * Provides a view for an AdapterView (ListView, GridView, etc.)
      *
